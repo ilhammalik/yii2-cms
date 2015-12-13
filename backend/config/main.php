@@ -11,8 +11,46 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+	 'mimin' => [
+        'class' => 'hscstudio\mimin\Module',
+    ],
+
+    ],
+     'as access' => [
+     'class' => 'hscstudio\mimin\components\AccessControl',
+     'allowActions' => [
+        // add wildcard allowed action here!
+        'site/*',
+        'debug/*',
+        //'*',
+        //'mimin/*', // only in dev mode
+    	],
+	],
+     //'homeUrl' => '/admin',
     'components' => [
+
+        //    'request' => [
+        //     'baseUrl' => '/admin',
+        // ],
+        
+          'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            //'enableStrictParsing' => true,
+            'rules' => [
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            ],
+        ],
+	   'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'js' => ['js/bootstrap.js']
+                ],
+            ],
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
