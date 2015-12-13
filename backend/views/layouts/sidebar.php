@@ -11,7 +11,7 @@ use yii\widgets\Menu;
     <div class="sidebar-scroll">
         <div class="sidebar-content">
             <a href="./index.php.html" class="sidebar-brand">
-            Ilham
+           Yii2-cms
             </a>
             <div class="sidebar-section sidebar-user clearfix">
                 <div class="sidebar-user-avatar">
