@@ -15,6 +15,7 @@ use yii\filters\VerbFilter;
 class PostController extends Controller
 {
     public $layout = 'admin';
+     public $enableCsrfValidation = false;
     public function behaviors()
     {
         return [
@@ -47,10 +48,10 @@ class PostController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
+    public function actionView($tahun,$judul)
+    {   $model = Post::find()->where("tahun='".$tahun."' and title='".$judul."'")->one();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
@@ -78,12 +79,12 @@ class PostController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($tahun,$judul)
     {
-        $model = $this->findModel($id);
+       $model = Post::find()->where("tahun='".$tahun."' and title='".$judul."'")->one();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'tahun' => $model->tahun,'judul' => $model->title]);
         } else {
             return $this->render('update', [
                 'model' => $model,

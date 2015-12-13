@@ -7,7 +7,7 @@ use yii\helpers\ArrayHelper; // load classes
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="post-form">
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([ 'options' => ['enctype'=>'multipart/form-data']]); ?>
     <div class="row">
         <div class="col-md-8">
 

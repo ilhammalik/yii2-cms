@@ -136,11 +136,11 @@ var base_url = window.location.origin;
    toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
    image_advtab: true ,
    
-   external_filemanager_path: base_url+"/app/filemanager/filemanager/",
+   external_filemanager_path: base_url+"<?= Url::to('/yii2-cms/admin/filemanager/filemanager/') ?>",
    relative_urls : false,
    convert_urls : false,
    filemanager_title:"Responsive Filemanager" ,
-   external_plugins: { "filemanager" : base_url+"/app/filemanager/filemanager/plugin.min.js"}
+   external_plugins: { "filemanager" : base_url+"<?= Url::to('/yii2-cms/admin/filemanager/filemanager/plugin.min.js') ?>"}
  });
 </script>
 <script type="text/javascript">
@@ -155,10 +155,10 @@ var base_url = window.location.origin;
    toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
    image_advtab: true ,
    
-   external_filemanager_path: base_url+"/app/filemanager/filemanager/",
+   external_filemanager_path: base_url+"<?= Url::to('/yii2-cms/admin/filemanager/filemanager/') ?>",
    relative_urls : false,
    convert_urls : false,
    filemanager_title:"Responsive Filemanager" ,
-   external_plugins: { "filemanager" : base_url+"/app/filemanager/filemanager/plugin.min.js"}
+   external_plugins: { "filemanager" : base_url+"<?= Url::to('/yii2-cms/admin/filemanager/filemanager/plugin.min.js') ?>"}
  });
 </script>

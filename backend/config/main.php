@@ -27,12 +27,12 @@ return [
         //'mimin/*', // only in dev mode
     	],
 	],
-     //'homeUrl' => '/admin',
+     'homeUrl' => '/yii2-cms/admin',
     'components' => [
 
-        //    'request' => [
-        //     'baseUrl' => '/admin',
-        // ],
+           'request' => [
+            'baseUrl' => '/yii2-cms/admin',
+        ],
         
           'urlManager' => [
             'enablePrettyUrl' => true,

@@ -18,7 +18,7 @@ class SiteController extends Controller
      */
    public $layout = 'admin';
     //public $defaultAction = 'coba';
-   //public $enableCsrfValidation = false;
+   public $enableCsrfValidation = false;
     public function behaviors()
     {
         return [
